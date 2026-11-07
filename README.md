@@ -109,12 +109,9 @@ test) and the estimated delivery times became shorter in mid-2018, so a threshol
 validation flags far too many test orders. The baseline has the best accuracy, which shows why
 accuracy alone is not useful here. Details and the full discussion are in the report.
 
-## Team and contributions
+## Author
 
-| Responsibility | Member | Reviewer |
-|---|---|---|
-| Data quality and cleaning decisions | Mohammed Zaid Al-Nahhas (mhd_zaid_211096) | |
-| Joins and features | | |
-| Analysis and figures | | |
-| Models and evaluation | | |
-| Integration, tests and documentation | | |
+Individual project by Mohammed Zaid Al-Nahhas (mhd_zaid_211096), SVU ITE, F25, class C1.
+All five responsibilities (data quality, joins and features, analysis, models, integration and
+tests) were done by the author. Without a teammate to review the code, correctness is checked by
+the automated tests and by rebuilding all results from the raw files with `run_all.sh`.
