@@ -1,0 +1,8 @@
+table,key,rows,duplicate_keys,null_keys,duplicate_full_rows
+orders,order_id,99441,0,0,0
+customers,customer_id,99441,0,0,0
+products,product_id,32951,0,0,0
+sellers,seller_id,3095,0,0,0
+translation,product_category_name,71,0,0,0
+items,order_id + order_item_id,112650,0,0,0
+payments,order_id + payment_sequential,103886,0,0,0

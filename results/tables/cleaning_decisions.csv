@@ -1,0 +1,18 @@
+table,issue,rows,action
+products,missing category,610,"set to 'unknown' (kept, it is still a valid product)"
+products,weight or dimension = 0 (impossible),4,"set to NaN, imputed later from train only"
+products,missing weight/dimensions,6,"kept as NaN, imputed inside the model pipeline (median of train)"
+products,category without English translation,623,use the Portuguese name instead ('unknown' for missing category)
+payments,installments = 0,2,set to 1 (a payment is at least one installment)
+payments,payment_type 'not_defined',3,"kept as its own category (only 3 rows, all on canceled orders)"
+payments,payment_value = 0,9,"kept: these are vouchers with zero value, not an error in the order"
+items,price <= 0,0,"none found, no action"
+items,freight_value = 0,383,kept: free shipping is a valid case
+orders,carrier before purchase,166,row kept + flag; excluded from the target / model table if the date is needed
+orders,carrier before approval,1359,row kept + flag; excluded from the target / model table if the date is needed
+orders,delivered before carrier,23,row kept + flag; excluded from the target / model table if the date is needed
+orders,delivered status no date,8,row kept + flag; excluded from the target / model table if the date is needed
+orders,not delivered status with date,6,row kept + flag; excluded from the target / model table if the date is needed
+orders,missing order_approved_at,160,"kept for descriptive analysis, excluded from the model table (no prediction moment)"
+customers,zip prefix not 5 characters,0,read as text so leading zeros are kept
+sellers,zip prefix not 5 characters,0,read as text so leading zeros are kept

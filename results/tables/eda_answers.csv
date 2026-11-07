@@ -1,0 +1,7 @@
+,answer
+Q1,"highest months: 2018-03 19.0%, 2018-02 14.1%, 2017-11 12.4%"
+Q2,same state 4.5% vs different 8.0%; 1 seller 6.9% vs 2+ 1.0% (n=1275)
+Q3,category range 4.2%-11.9%; weight Q1 6.1% -> Q5 7.5%
+Q4,"corr(planned, actual)=0.37; late rate <=10 days 9.9%, >40 days 2.2%; median margin -12 days"
+Q5,"eligible late rate 6.77% vs 6.57% if unknown were 'on time'; removed 2986 orders; unfinished share last months: 2018-05 1.2%, 2018-06 0.7%, 2018-07 1.2%, 2018-08 1.1%"
+Q6,"seller past late 0% -> 5.8%, >20% -> 8.1%; spearman(is_late, planned_days)=-0.03, (is_late, seller_prior_late_rate)=0.04"

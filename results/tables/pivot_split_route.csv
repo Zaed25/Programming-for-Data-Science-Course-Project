@@ -1,0 +1,4 @@
+split,different states,same state
+test,0.0397,0.0503
+train,0.0651,0.0386
+val,0.1418,0.0491

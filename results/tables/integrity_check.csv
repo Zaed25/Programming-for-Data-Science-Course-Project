@@ -1,0 +1,9 @@
+relation,child_rows,orphans
+orders.customer_id -> customers,99441,0
+items.order_id -> orders,112650,0
+items.product_id -> products,112650,0
+items.seller_id -> sellers,112650,0
+payments.order_id -> orders,103886,0
+products.category -> translation,32341,13
+orders without items,99441,775
+orders without payments,99441,1

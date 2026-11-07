@@ -1,0 +1,15 @@
+stage,table,rows,columns,cols_with_missing,missing_cells
+before,orders,99441,8,3,4908
+before,customers,99441,5,0,0
+before,items,112650,7,0,0
+before,payments,103886,5,0,0
+before,products,32951,9,8,2448
+before,sellers,3095,4,0,0
+before,translation,71,2,0,0
+after,orders,99441,16,3,4908
+after,customers,99441,5,0,0
+after,items,112650,7,0,0
+after,payments,103886,5,0,0
+after,products,32951,12,9,2467
+after,sellers,3095,4,0,0
+after,translation,71,2,0,0

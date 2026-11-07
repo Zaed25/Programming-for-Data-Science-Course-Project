@@ -1,0 +1,13 @@
+model,params,val_avg_precision,val_best_f1,threshold,fit_seconds
+Baseline (always on time),{},0.1084,0.0,0.5,0.2
+Logistic Regression,"{""C"": 0.01}",0.2184,0.3078,0.4408,0.5
+Logistic Regression,"{""C"": 0.1}",0.2171,0.3015,0.4549,0.7
+Logistic Regression,"{""C"": 1.0}",0.215,0.298,0.4503,1.1
+Random Forest,"{""max_depth"": 12, ""min_samples_leaf"": 5}",0.2008,0.2874,0.3993,3.5
+Random Forest,"{""max_depth"": 12, ""min_samples_leaf"": 20}",0.1992,0.2814,0.4097,3.7
+Random Forest,"{""max_depth"": null, ""min_samples_leaf"": 5}",0.1633,0.2427,0.2043,4.5
+Random Forest,"{""max_depth"": null, ""min_samples_leaf"": 20}",0.1817,0.2589,0.3445,4.5
+Gradient Boosting,"{""learning_rate"": 0.03, ""max_leaf_nodes"": 15}",0.1516,0.2383,0.4478,7.4
+Gradient Boosting,"{""learning_rate"": 0.03, ""max_leaf_nodes"": 31}",0.1515,0.2352,0.4377,8.1
+Gradient Boosting,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 15}",0.1598,0.2497,0.4866,3.2
+Gradient Boosting,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 31}",0.1547,0.2432,0.4336,2.4

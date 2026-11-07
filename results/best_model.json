@@ -1,0 +1,7 @@
+{
+  "best_model": "Logistic Regression",
+  "params": {
+    "C": 0.01
+  },
+  "threshold": 0.4407864442150598
+}

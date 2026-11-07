@@ -1,0 +1,10 @@
+filter,rows_left,removed
+all orders,99441,0
+status = delivered,96478,2963
+delivered date present,96470,8
+delivered not before purchase,96470,0
+approval date present,96456,14
+approval not before purchase,96456,0
+has at least one item,96456,0
+has payment records,96455,1
+approved before 2018-09-01,96455,0

@@ -1,0 +1,5 @@
+step,rows_before,rows_after,note
+orders + customers,99441,99441,one-to-one on customer_id
+items + products + sellers,112650,112650,"many-to-one joins, row count must not change"
+orders + items (aggregated),99441,99441,items grouped to order level first
+orders + payments (aggregated),99441,99441,payments grouped to order level first
