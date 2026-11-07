@@ -1,0 +1,40 @@
+// relations between the 7 tables (render: dot -Tpng docs/er_diagram.dot -o results/figures/00_er_diagram.png)
+digraph olist {
+  graph [rankdir=LR, fontname="Helvetica", nodesep=0.4, ranksep=0.9, dpi=150];
+  node  [shape=plain, fontname="Helvetica", fontsize=10];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", dir=both];
+  customers [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>customers</b> (99,441)</font></td></tr>
+    <tr><td align="left"><b>PK customer_id</b></td></tr><tr><td align="left">customer_unique_id</td></tr>
+    <tr><td align="left">zip_prefix (text), city, state</td></tr></table>>];
+  orders [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>orders</b> (99,441)</font></td></tr>
+    <tr><td align="left"><b>PK order_id</b></td></tr><tr><td align="left">FK customer_id</td></tr>
+    <tr><td align="left">status, purchase, approved_at</td></tr>
+    <tr><td align="left">delivered_carrier / customer</td></tr><tr><td align="left">estimated_delivery_date</td></tr></table>>];
+  items [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>order_items</b> (112,650)</font></td></tr>
+    <tr><td align="left"><b>PK order_id + order_item_id</b></td></tr>
+    <tr><td align="left">FK product_id, FK seller_id</td></tr>
+    <tr><td align="left">price, freight_value, shipping_limit</td></tr></table>>];
+  payments [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>order_payments</b> (103,886)</font></td></tr>
+    <tr><td align="left"><b>PK order_id + payment_sequential</b></td></tr>
+    <tr><td align="left">type, installments, value</td></tr></table>>];
+  products [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>products</b> (32,951)</font></td></tr>
+    <tr><td align="left"><b>PK product_id</b></td></tr><tr><td align="left">FK category_name</td></tr>
+    <tr><td align="left">weight, length, height, width</td></tr></table>>];
+  sellers [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>sellers</b> (3,095)</font></td></tr>
+    <tr><td align="left"><b>PK seller_id</b></td></tr><tr><td align="left">zip_prefix (text), city, state</td></tr></table>>];
+  translation [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <tr><td bgcolor="#2E6DA4"><font color="white"><b>category_translation</b> (71)</font></td></tr>
+    <tr><td align="left"><b>PK category_name</b></td></tr><tr><td align="left">category_name_english</td></tr></table>>];
+  customers -> orders  [arrowtail=tee, arrowhead=tee, label="1 : 1 (customer_id)"];
+  orders -> items      [arrowtail=tee, arrowhead=crowodot, label="1 : 0..n"];
+  orders -> payments   [arrowtail=tee, arrowhead=crowodot, label="1 : 0..n"];
+  items -> products    [arrowtail=crow, arrowhead=tee, label="n : 1"];
+  items -> sellers     [arrowtail=crow, arrowhead=tee, label="n : 1"];
+  products -> translation [arrowtail=crowodot, arrowhead=teeodot, label="n : 0..1"];
+}
