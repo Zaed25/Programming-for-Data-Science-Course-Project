@@ -3,13 +3,13 @@
 SVU – Programming for Data Science (DPD601), F25 course project.
 
 We clean and join the seven tables of the Brazilian Olist e-commerce dataset, study which order
-characteristics go together with late delivery, and train models that estimate, **at the moment an
-order is approved**, whether it will reach the customer after the estimated delivery day.
+characteristics go together with late delivery, and train models that estimate, at the moment an
+order is approved, whether it will reach the customer after the estimated delivery day.
 
 ## Data source and licence
 
 Olist, & Sionek, A. (2018). *Brazilian E-Commerce Public Dataset by Olist*. Kaggle.
-https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce — licence **CC BY-NC-SA 4.0**
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce, licence CC BY-NC-SA 4.0
 (attribution, non-commercial use, share alike). The data are historical (2016–2018, Brazil); the
 results should not be generalised directly to other markets.
 
@@ -81,9 +81,9 @@ by date, so running it again gives the same tables and figures.
 
 ## Main decisions
 
-* **Unit = one order.** Items and payments are aggregated to one row per order *before* being
+* **Unit = one order.** Items and payments are aggregated to one row per order before being
   merged; the merge log (`results/tables/merge_log.csv`) shows the row count never changes.
-* **Target `is_late`:** 1 if the delivery **day** is after the estimated **day**, 0 if on or
+* **Target `is_late`:** 1 if the delivery day is after the estimated day, 0 if on or
   before it. Only delivered orders with valid dates get a target; canceled, unavailable or
   still-shipping orders are *not* counted as on time.
 * **Prediction moment = approval.** Inputs never include `order_status`,
@@ -106,12 +106,9 @@ by date, so running it again gives the same tables and figures.
 The models rank orders better than chance (late rate rises from 0.5% in the lowest score decile to
 ~8% in the highest) but the late rate changes a lot over time (5.6% train, 10.8% validation, 4.4%
 test) and the estimated delivery times became shorter in mid-2018, so a threshold chosen on
-validation flags far too many test orders. The baseline has the best accuracy, which shows why
-accuracy alone is not useful here. Details and the full discussion are in the report.
+validation flags far too many test orders. The baseline has the best accuracy
+because most orders are on time. More details are in the report.
 
 ## Author
 
-Individual project by Mohammed Zaid Al-Nahhas (mhd_zaid_211096), SVU ITE, F25, class C1.
-All five responsibilities (data quality, joins and features, analysis, models, integration and
-tests) were done by the author. Without a teammate to review the code, correctness is checked by
-the automated tests and by rebuilding all results from the raw files with `run_all.sh`.
+Mohammed Zaid Al-Nahhas (mhd_zaid_211096), SVU ITE, F25, C1.
